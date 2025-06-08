@@ -1,0 +1,4 @@
+# Requirements for Stellar Blade Menu Background Changer
+# No external dependencies required - uses only Python standard library
+# tkinter (included with Python)
+# os, sys, shutil, subprocess, threading, json, pathlib (all standard library)
