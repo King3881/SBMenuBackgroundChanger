@@ -40,6 +40,10 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+<<<<<<< HEAD
     icon='Icon.ico',
+=======
+    icon=None,  # Add icon path here if you have one
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
     version_file=None,  # Add version file here if needed
 )

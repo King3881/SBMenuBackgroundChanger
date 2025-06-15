@@ -5,7 +5,11 @@ A mod tool for changing the main menu background video in Stellar Blade PC
 Uses RAD Video Tools for proper BK2 conversion
 
 Author: King3881
+<<<<<<< HEAD
 Version: 1.1.0
+=======
+Version: 1.0.0
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 Compatible with: Stellar Blade PC Demo/Full Version
 """
 
@@ -15,8 +19,11 @@ import shutil
 import subprocess
 import threading
 import json
+<<<<<<< HEAD
 import cv2
 import numpy as np
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 from pathlib import Path
 
 # Enhanced error handling for tkinter import
@@ -48,13 +55,18 @@ def setup_logging():
         log_file = os.path.join(os.path.dirname(sys.argv[0]), "stellar_blade_mod.log")
         # Clear previous log
         with open(log_file, "w", encoding='utf-8') as f:
+<<<<<<< HEAD
             f.write("Stellar Blade Mod Tool v1.1.0 - Log started\n")
+=======
+            f.write("Stellar Blade Mod Tool v1.0.0 - Log started\n")
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
             f.write(f"Python version: {sys.version}\n")
             f.write(f"Working directory: {os.getcwd()}\n")
             f.write("-" * 50 + "\n")
     except:
         pass  # If logging setup fails, continue without logging
 
+<<<<<<< HEAD
 def add_video_border(input_path, output_path, border_percentage=5, progress_callback=None):
     """Add black borders to video"""
     # Check if input file exists
@@ -171,20 +183,33 @@ def add_video_border(input_path, output_path, border_percentage=5, progress_call
     log_message(f"Video processing complete! Output saved to: {output_path}")
     log_message(f"Total frames processed: {frame_count}")
 
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 class StellarBladeModTool:
     def __init__(self):
         log_message("Initializing Stellar Blade Mod Tool...")
         try:
             self.root = tk.Tk()
+<<<<<<< HEAD
             self.root.title("Stellar Blade Menu Background Changer v1.1.0")
             self.root.geometry("700x650")
             self.root.minsize(650, 650)  # Set minimum size
+=======
+            self.root.title("Stellar Blade Menu Background Changer v1.0.0")
+            self.root.geometry("650x600")
+            self.root.minsize(650, 500)  # Set minimum size
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 
             # Center the window
             self.root.update_idletasks()
             x = (self.root.winfo_screenwidth() // 2) - (700 // 2)
+<<<<<<< HEAD
             y = (self.root.winfo_screenheight() // 2) - (650 // 2)
             self.root.geometry(f"700x650+{x}+{y}")
+=======
+            y = (self.root.winfo_screenheight() // 2) - (600 // 2)
+            self.root.geometry(f"650x600+{x}+{y}")
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 
             log_message("Tkinter window created successfully")
         except Exception as e:
@@ -264,7 +289,11 @@ class StellarBladeModTool:
                                  font=("Arial", 10))
         subtitle_label.pack()
 
+<<<<<<< HEAD
         version_label = tk.Label(title_frame, text="v1.1.0", 
+=======
+        version_label = tk.Label(title_frame, text="v1.0.0", 
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
                                 font=("Arial", 9), fg="blue")
         version_label.pack()
 
@@ -311,13 +340,18 @@ class StellarBladeModTool:
         self.progress_frame = tk.Frame(scrollable_frame)
         self.progress_frame.pack(fill="x", padx=10, pady=10)
 
+<<<<<<< HEAD
         self.progress = ttk.Progressbar(self.progress_frame, mode='determinate')
+=======
+        self.progress = ttk.Progressbar(self.progress_frame, mode='indeterminate')
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
         self.progress_label = tk.Label(self.progress_frame, text="")
 
         # Buttons section
         button_frame = tk.Frame(scrollable_frame)
         button_frame.pack(fill="x", padx=10, pady=20)
 
+<<<<<<< HEAD
         # First row of buttons - centered
         button_row1 = tk.Frame(button_frame)
         button_row1.pack(anchor="center", pady=(0, 10))
@@ -345,6 +379,27 @@ class StellarBladeModTool:
                                 command=self.add_video_border_ui, bg="#9C27B0", fg="white",
                                 font=("Arial", 11, "bold"), padx=15, pady=8)
         self.border_btn.pack(side="left")
+=======
+        # First row of buttons
+        button_row1 = tk.Frame(button_frame)
+        button_row1.pack(fill="x", pady=(0, 10))
+
+        self.convert_btn = tk.Button(button_row1, text="Video Conversion", 
+                                    command=self.start_conversion, bg="#4CAF50", fg="white",
+                                    font=("Arial", 11, "bold"), padx=15, pady=8)
+        self.convert_btn.pack(side="left", padx=(0, 10))
+
+        self.use_file_btn = tk.Button(button_row1, text="Use Converted File", 
+                                     command=self.use_converted_file, bg="#2196F3", fg="white",
+                                     font=("Arial", 11, "bold"), padx=15, pady=8)
+        self.use_file_btn.pack(side="left", padx=(0, 10))
+
+        self.restore_btn = tk.Button(button_row1, text="Restore Original", 
+                                    command=self.restore_original, bg="#FF9800", fg="white",
+                                    font=("Arial", 11, "bold"), padx=15, pady=8)
+        self.restore_btn.pack(side="left", padx=(0, 10))
+
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 
         # Status section
         status_frame = tk.Frame(scrollable_frame)
@@ -371,7 +426,10 @@ class StellarBladeModTool:
         instructions = """REQUIREMENTS (MUST INSTALL FIRST):
 1. Download and install RAD Video Tools from: https://www.radgametools.com/down/Bink/RADTools.7z
 2. Extract and install to C:\Program Files (x86)\RADVideo (default location)
+<<<<<<< HEAD
 3. Install OpenCV for Python: pip install opencv-python (for video border feature)
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 
 OPTION 1 - GUIDED CONVERSION:
 1. Set your Stellar Blade installation path (usually auto-detected)
@@ -387,6 +445,7 @@ OPTION 2 - USE EXISTING CONVERTED FILE:
 2. Browse and select your pre-converted EVE_Title.bk2 file
 3. The mod will install it directly without needing RAD Video Tools
 
+<<<<<<< HEAD
 OPTION 3 - ADD VIDEO BORDER (NEW):
 1. Click "Add Video Border" to add black borders to your video
 2. Select input video file (MP4, AVI, MOV, etc.)
@@ -399,6 +458,8 @@ VIDEO BORDER FEATURE:
 • Maintains original video aspect ratio
 • Useful for videos that don't match game resolution perfectly
 
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 CONVERSION STEPS (for Option 1):
 1. RAD Video Tools will open
 2. Load your MP4 video file (Click "Browse" in RAD Video Tools)
@@ -422,14 +483,21 @@ NOTES:
 • Original file will be automatically backed up as "EVE_Title_original.bk2"
 • Always backup your save files before modding!
 • If conversion fails, try reducing video quality/resolution in RAD Video Tools
+<<<<<<< HEAD
 • Use "Add Video Border" feature for videos that don't fit perfectly
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 
 TROUBLESHOOTING:
 • If RAD Video Tools won't launch, try running this app as Administrator
 • If converted video shows black screen in game, the BK2 conversion may have failed
 • Try different video formats (MP4 with H.264 codec works best)
+<<<<<<< HEAD
 • Ensure your video file isn't corrupted before conversion
 • For video border feature, ensure OpenCV is installed: pip install opencv-python"""
+=======
+• Ensure your video file isn't corrupted before conversion"""
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
 
         instructions_text.insert("1.0", instructions)
         instructions_text.config(state="disabled")
@@ -440,6 +508,7 @@ TROUBLESHOOTING:
 
         canvas.bind_all("<MouseWheel>", _on_mousewheel)
 
+<<<<<<< HEAD
     def add_video_border_ui(self):
         """UI for adding video border"""
         # Check if OpenCV is available
@@ -561,6 +630,8 @@ TROUBLESHOOTING:
             self.status_label.config(text="Border processing failed", fg="red")
             messagebox.showerror("Error", f"Failed to add borders:\n{str(e)}")
 
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
     def check_dependencies(self):
         """Check if RAD Video Tools is available"""
         log_message("Checking for RAD Video Tools...")
@@ -618,7 +689,11 @@ TROUBLESHOOTING:
     def browse_game_path(self):
         """Browse for game installation directory"""
         path = filedialog.askdirectory(title="Select Stellar Blade Installation Directory",
+<<<<<<< HEAD
                                      initialdir=os.path.dirname(self.default_game_path))
+=======
+                                      initialdir=os.path.dirname(self.default_game_path))
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
         if path:
             self.path_var.set(path)
             self.default_game_path = path
@@ -627,7 +702,11 @@ TROUBLESHOOTING:
     def browse_rad_path(self):
         """Browse for RAD Video Tools directory"""
         path = filedialog.askdirectory(title="Select RAD Video Tools Installation Directory",
+<<<<<<< HEAD
                                      initialdir=self.default_rad_path)
+=======
+                                      initialdir=self.default_rad_path)
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
         if path:
             self.rad_var.set(path)
             self.default_rad_path = path
@@ -648,8 +727,13 @@ TROUBLESHOOTING:
         self.movies_path = os.path.join(game_path, "SB", "Content", "Movies")
         if not os.path.exists(self.movies_path):
             messagebox.showerror("Error", 
+<<<<<<< HEAD
                                f"Movies directory not found:\n{self.movies_path}\n\n"
                                "Please ensure you've selected the correct Stellar Blade installation directory.")
+=======
+                                f"Movies directory not found:\n{self.movies_path}\n\n"
+                                "Please ensure you've selected the correct Stellar Blade installation directory.")
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
             return False
 
         # Create backup directory
@@ -666,11 +750,14 @@ TROUBLESHOOTING:
         self.progress.start()
         self.root.update()
 
+<<<<<<< HEAD
     def update_progress(self, frame_count):
         """Update progress bar"""
         self.progress['value'] = frame_count
         self.root.update_idletasks()
 
+=======
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
     def hide_progress(self):
         """Hide progress bar"""
         self.progress.stop()
@@ -755,10 +842,17 @@ TROUBLESHOOTING:
         """Start the video conversion process"""
         if not self.rad_tools_path:
             messagebox.showerror("Error", 
+<<<<<<< HEAD
                                "RAD Video Tools not found!\n\n"
                                "Please install RAD Video Tools first:\n"
                                "https://www.radgametools.com/down/Bink/RADTools.7z\n\n"
                                "Or use 'Use Converted File' if you already have a BK2 file.")
+=======
+                                "RAD Video Tools not found!\n\n"
+                                "Please install RAD Video Tools first:\n"
+                                "https://www.radgametools.com/down/Bink/RADTools.7z\n\n"
+                                "Or use 'Use Converted File' if you already have a BK2 file.")
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
             return
 
         if not self.validate_paths():
@@ -895,12 +989,21 @@ TROUBLESHOOTING:
 
         if not os.path.exists(backup_file):
             messagebox.showerror("Error", "Original backup file not found.\n"
+<<<<<<< HEAD
                                "Cannot restore original background.")
             return
 
         if not messagebox.askyesno("Confirm Restore", 
                                  "This will restore the original menu background.\n"
                                  "Continue?"):
+=======
+                                "Cannot restore original background.")
+            return
+
+        if not messagebox.askyesno("Confirm Restore", 
+                                  "This will restore the original menu background.\n"
+                                  "Continue?"):
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
             return
 
         try:
@@ -921,8 +1024,13 @@ TROUBLESHOOTING:
 def main():
     """Main function with enhanced error handling"""
     print("=" * 60)
+<<<<<<< HEAD
     print("Stellar Blade Menu Background Changer v1.1.0")
     print("Now with Video Border feature!")
+=======
+    print("Stellar Blade Menu Background Changer v1.0.0")
+    print("Expandable GUI + Use Converted File option!")
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
     print("=" * 60)
 
     # Setup logging
@@ -947,8 +1055,13 @@ def main():
                 root = tk.Tk()
                 root.withdraw()  # Hide main window
                 messagebox.showerror("Fatal Error", 
+<<<<<<< HEAD
                                    f"Application crashed with error:\n\n{e}\n\n"
                                    f"Please check the log file: stellar_blade_mod.log")
+=======
+                                    f"Application crashed with error:\n\n{e}\n\n"
+                                    f"Please check the log file: stellar_blade_mod.log")
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
         except:
             pass
 
@@ -957,4 +1070,8 @@ def main():
         log_message("Application ended")
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
+=======
+    main()
+>>>>>>> 95b0d987115a73739c1a92bc44a8cb03a8686d7e
