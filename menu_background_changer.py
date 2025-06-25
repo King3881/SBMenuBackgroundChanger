@@ -50,7 +50,7 @@ def setup_logging():
         log_file = os.path.join(os.path.dirname(sys.argv[0]), "stellar_blade_mod.log")
         # Clear previous log
         with open(log_file, "w", encoding='utf-8') as f:
-            f.write("Stellar Blade Mod Tool v1.1.0 - Log started\n")
+            f.write("Stellar Blade Mod Tool v1.1.1 - Log started\n")
             f.write(f"Python version: {sys.version}\n")
             f.write(f"Working directory: {os.getcwd()}\n")
             f.write("-" * 50 + "\n")
@@ -213,7 +213,7 @@ class StellarBladeModTool:
         log_message("Initializing Stellar Blade Mod Tool...")
         try:
             self.root = tk.Tk()
-            self.root.title("Stellar Blade Menu Background Changer v1.1.0")
+            self.root.title("Stellar Blade Menu Background Changer v1.1.1")
             self.root.geometry("700x650")
             self.root.minsize(650, 650)  # Set minimum size
 
@@ -301,7 +301,7 @@ class StellarBladeModTool:
                                  font=("Arial", 10))
         subtitle_label.pack()
 
-        version_label = tk.Label(title_frame, text="v1.1.0", 
+        version_label = tk.Label(title_frame, text="v1.1.1", 
                                 font=("Arial", 9), fg="blue")
         version_label.pack()
 
@@ -958,7 +958,7 @@ TROUBLESHOOTING:
 def main():
     """Main function with enhanced error handling"""
     print("=" * 60)
-    print("Stellar Blade Menu Background Changer v1.1.0")
+    print("Stellar Blade Menu Background Changer v1.1.1")
     print("Now with Video Border feature!")
     print("=" * 60)
 

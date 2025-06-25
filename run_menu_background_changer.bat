@@ -1,8 +1,8 @@
 # Create updated batch file
 batch_content = '''@echo off
-title Stellar Blade Menu Background Changer v1.0.0
+title Stellar Blade Menu Background Changer v1.1.1
 echo ================================================================
-echo Stellar Blade Menu Background Changer v1.0.0
+echo Stellar Blade Menu Background Changer v1.1.1
 echo Now with RAD Video Tools support for proper BK2 conversion!
 echo ================================================================
 echo.
