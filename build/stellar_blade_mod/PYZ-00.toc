@@ -1,5 +1,4 @@
-('C:\\Users\\Austin\\Stellar Blade Menu Background '
- 'Changer\\SBMenuBackgroundChanger\\build\\stellar_blade_mod\\PYZ-00.pyz',
+('C:\\Users\\Austin\\SBMenuBackgroundChanger\\build\\stellar_blade_mod\\PYZ-00.pyz',
  [('__future__',
    'C:\\Users\\Austin\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\__future__.py',
    'PYMODULE'),
